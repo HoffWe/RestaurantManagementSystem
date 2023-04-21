@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-21T08:18:58.767Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="uoHhk6a_RWj_Y5y0jFNE" version="21.2.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-21T08:22:11.778Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="TJtUcR7FLtbiiNbz8lWZ" version="21.2.1" type="github">
   <diagram name="Strona-1" id="IJhLKjHQUbu2h9b9uhcY">
     <mxGraphModel dx="1877" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -43,8 +43,8 @@
         <mxCell id="xGsZDXbrnB55knreOYdG-10" value="grafik&amp;nbsp;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="xGsZDXbrnB55knreOYdG-9" vertex="1">
           <mxGeometry y="50" width="160" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="xGsZDXbrnB55knreOYdG-12" value="&lt;span style=&quot;border-bottom: 1px dotted&quot;&gt;system rekomendacji pracowników&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry y="740" width="200" height="60" as="geometry" />
+        <mxCell id="xGsZDXbrnB55knreOYdG-12" value="&lt;span style=&quot;border-bottom: 1px dotted&quot;&gt;system rekomendacji pracowników&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#e6d0de;strokeColor=#996185;gradientColor=#d5739d;" parent="1" vertex="1">
+          <mxGeometry x="827" y="330" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xGsZDXbrnB55knreOYdG-13" value="Magazine" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="530" y="790" width="160" height="120" as="geometry" />
@@ -159,6 +159,9 @@
         </mxCell>
         <mxCell id="e2hy0QdrsWQ-chDwBHvw-17" value="Formularz rezerwacji stolika&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="390" y="560" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e2hy0QdrsWQ-chDwBHvw-18" value="formularz wysyłany z konta obecnego pracownika" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fillColor=#e6d0de;gradientColor=#d5739d;strokeColor=#996185;" vertex="1" parent="1">
+          <mxGeometry x="1007" y="340" width="200" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
