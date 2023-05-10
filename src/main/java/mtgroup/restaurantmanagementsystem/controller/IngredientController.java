@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:3000/")
 @RequestMapping("/api/ingredient")
 public class IngredientController {
 
@@ -23,27 +25,27 @@ public class IngredientController {
         this.ingredientService = ingredientService;
     }
 
-    @GetMapping("/")
-    public ResponseEntity<IngredientDto> getAllIngredients(){
-        final Optional<Ingredient> optionalIngredient = ingredientService.getAllIngredients();
-        return optionalIngredient.map(ingredient -> ResponseEntity.ok(IngredientDtoMapper.mapIngredientToDto(ingredient)))
-                .orElseGet(()->ResponseEntity.of(Optional.empty()));
+    @GetMapping
+    public List<IngredientDto> getAllIngredients(){
+        return ingredientService.getAllIngredients().stream()
+                .map(IngredientDtoMapper::mapIngredientToDto)
+                .collect(Collectors.toList());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<IngredientDto> getIngredientsById(Long id){
+    @GetMapping("{id}")
+    public ResponseEntity<IngredientDto> getIngredientsById(@PathVariable Long id){
         final Optional<Ingredient> optionalIngredient = ingredientService.getIngredientsById(id);
         return optionalIngredient.map(ingredient -> ResponseEntity.ok(IngredientDtoMapper.mapIngredientToDto(ingredient)))
                 .orElseGet(()->ResponseEntity.of(Optional.empty()));
     }
 
-    @PutMapping("/add")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Ingredient addNewIngredient(@RequestBody IngredientDto ingredientDto){
         return ingredientService.addNewIngredient(ingredientDto);
     }
 
-    @PatchMapping("/update")
+    @PutMapping("{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Ingredient updateIngredient(@PathVariable Long id,@RequestBody IngredientDto ingredientDto){
         return ingredientService.updateIngredient(id,ingredientDto);
