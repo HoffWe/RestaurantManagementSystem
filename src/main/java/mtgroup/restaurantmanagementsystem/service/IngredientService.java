@@ -6,8 +6,10 @@ import mtgroup.restaurantmanagementsystem.repository.IngredientRepository;
 import org.springframework.stereotype.Service;
 
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class IngredientService {
@@ -19,7 +21,8 @@ public class IngredientService {
     }
 
     public List<Ingredient> getAllIngredients() {
-        return ingredientRepository.findAll();
+        return ingredientRepository.findAll().stream()
+                .sorted(Comparator.comparing(Ingredient::getName)).collect(Collectors.toList());
     }
 
 

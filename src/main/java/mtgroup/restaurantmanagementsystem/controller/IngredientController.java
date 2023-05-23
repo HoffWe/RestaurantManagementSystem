@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin("http://localhost:3000/")
-@RequestMapping("/api/ingredient")
+@RequestMapping("/api/ingredient/")
 public class IngredientController {
 
 
@@ -45,14 +45,14 @@ public class IngredientController {
         return ingredientService.addNewIngredient(ingredientDto);
     }
 
-    @PutMapping("{id}")
+    @PatchMapping("edit/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Ingredient updateIngredient(@PathVariable Long id,@RequestBody IngredientDto ingredientDto){
         return ingredientService.updateIngredient(id,ingredientDto);
     }
 
-    @DeleteMapping
-    public void deleteIngredient(@RequestParam Long id){
+    @DeleteMapping("/{id}")
+    public void deleteIngredient(@PathVariable Long id){
         ingredientService.deleteIngredient(id);
     }
 }
