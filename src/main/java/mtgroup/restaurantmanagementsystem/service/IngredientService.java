@@ -6,7 +6,10 @@ import mtgroup.restaurantmanagementsystem.repository.IngredientRepository;
 import org.springframework.stereotype.Service;
 
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class IngredientService {
@@ -17,14 +20,14 @@ public class IngredientService {
         this.ingredientRepository = ingredientRepository;
     }
 
-    public Optional<Ingredient> getAllIngredients() {
-        return ingredientRepository.getAllIngredients();
+    public List<Ingredient> getAllIngredients() {
+        return ingredientRepository.findAll().stream()
+                .sorted(Comparator.comparing(Ingredient::getName)).collect(Collectors.toList());
     }
 
 
     public Optional<Ingredient> getIngredientsById(Long id) {
-        return Optional.ofNullable(ingredientRepository.getIngredientsById()
-                .orElseThrow(() -> new RuntimeException("Ingredients not found")));
+        return ingredientRepository.findById(id);
     }
 
     public Ingredient addNewIngredient(IngredientDto ingredientDto){
@@ -38,7 +41,7 @@ public class IngredientService {
     }
 
     public Ingredient updateIngredient(Long id,IngredientDto ingredientDto){
-        Ingredient ingredient = ingredientRepository.getIngredientsById().get();
+        Ingredient ingredient = ingredientRepository.findById(id).get();
         ingredient.setId(ingredientDto.getId());
         ingredient.setName(ingredientDto.getName());
         ingredient.setAmount(ingredientDto.getAmount());
